@@ -10,9 +10,22 @@
   },
   "customizations": {
     "vscode": {
-      "extensions": ["ms-docker.docker", "rust-lang.rust-analyzer", "golang.Go", "ms-python.python"]
+      "extensions": [
+        "ms-docker.docker",
+        "rust-lang.rust-analyzer",
+        "golang.Go",
+        "ms-python.python",
+        "anthropic.claude-code"
+      ]
     }
   },
-  "forwardPorts": [443, 8001, 8002, 8003, 8004],
-  "remoteUser": "root"
+  "forwardPorts": [
+    443,
+    8001,
+    8002,
+    8003,
+    8004
+  ],
+  "remoteUser": "root",
+  "postStartCommand": "bash scripts/claude-persist.sh"
 }
