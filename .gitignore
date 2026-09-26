@@ -1,0 +1,13 @@
+.env
+.env.local
+.certs/
+*.pem
+*.key
+.docker/
+__pycache__/
+*.py[cod]
+target/
+node_modules/
+*.log
+.DS_Store
+Thumbs.db

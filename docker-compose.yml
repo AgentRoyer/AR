@@ -1,0 +1,77 @@
+version: '3.8'
+
+services:
+  app-cfml:
+    build: ./app-cfml
+    container_name: app-cfml
+    ports:
+      - "8001:8888"
+    environment:
+      LUCEE_ADMIN_PASSWORD: ${LUCEE_ADMIN_PASSWORD:-password}
+    volumes:
+      - ./app-cfml/src:/var/www
+    networks:
+      - agentroyer-net
+    restart: unless-stopped
+
+  app-rust:
+    build: ./app-rust
+    container_name: app-rust
+    ports:
+      - "8002:8000"
+    environment:
+      GROQ_API_KEY: ${GROQ_API_KEY}
+      CLAUDE_API_KEY: ${CLAUDE_API_KEY}
+      RUST_LOG: info
+    volumes:
+      - ./app-rust/src:/app/src
+    networks:
+      - agentroyer-net
+    restart: unless-stopped
+
+  app-go:
+    build: ./app-go
+    container_name: app-go
+    ports:
+      - "8003:8080"
+    environment:
+      PORT: 8080
+    networks:
+      - agentroyer-net
+    restart: unless-stopped
+
+  app-python:
+    build: ./app-python
+    container_name: app-python
+    ports:
+      - "8004:5000"
+    environment:
+      FLASK_APP: app.py
+      FLASK_ENV: development
+    volumes:
+      - ./app-python:/app
+    networks:
+      - agentroyer-net
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:alpine
+    container_name: agentroyer-nginx
+    ports:
+      - "443:443"
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./.certs:/etc/nginx/certs:ro
+    depends_on:
+      - app-cfml
+      - app-rust
+      - app-go
+      - app-python
+    networks:
+      - agentroyer-net
+    restart: unless-stopped
+
+networks:
+  agentroyer-net:
+    driver: bridge
