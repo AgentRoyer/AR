@@ -1,7 +1,7 @@
 FROM golang:1.21-alpine as builder
 WORKDIR /build
 COPY ./Projects ./
-RUN cd microservice-1 && go build -o /build/app-go .
+RUN cd chatbot && go build -o /build/app-go .
 FROM alpine:latest
 RUN apk add --no-cache ca-certificates curl
 WORKDIR /app
