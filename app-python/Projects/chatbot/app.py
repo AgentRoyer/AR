@@ -10,6 +10,7 @@ app = Flask(__name__)
 # Chatbot PYTHONA — même interface et même API que RUSTINA (app-rust/Projects/chatbot)
 CHATBOT_NAME = "PYTHONA"
 CHATBOT_VERSION = "1.0.0"
+BOT_COLOR = "green"  # Émeraude
 SYSTEM_PROMPT = "You are PYTHONA, a helpful AI chatbot powered by Groq under Python. You know your name and identity. When asked who you are or what your name is, answer clearly and confidently."
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_MODEL = "openai/gpt-oss-20b"
@@ -64,7 +65,8 @@ def chatbot():
             "bot": CHATBOT_NAME,
             "user_input": user_message,
             "response": reply["content"],
-            "identity": CHATBOT_NAME
+            "identity": CHATBOT_NAME,
+            "color": BOT_COLOR
         })
 
     return render_index()
@@ -86,6 +88,7 @@ def health():
     return jsonify({
         "status": "healthy",
         "bot": CHATBOT_NAME,
+        "color": BOT_COLOR,
         "identity_aware": True
     }), 200
 
@@ -96,6 +99,7 @@ def identity():
         "name": CHATBOT_NAME,
         "system_prompt": SYSTEM_PROMPT,
         "version": CHATBOT_VERSION,
+        "color": BOT_COLOR,
         "knows_identity": True
     }), 200
 

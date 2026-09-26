@@ -19,6 +19,7 @@ import (
 const (
 	CHATBOT_NAME    = "GONA"
 	CHATBOT_VERSION = "1.0.0"
+	BOT_COLOR       = "orange" // Or/bronze
 	GROQ_URL        = "https://api.groq.com/openai/v1/chat/completions"
 	GROQ_MODEL      = "openai/gpt-oss-20b"
 	SYSTEM_PROMPT   = "You are GONA, a helpful AI chatbot powered by Groq under Go. You know your name and identity. When asked who you are or what your name is, answer clearly and confidently."
@@ -41,6 +42,7 @@ type ChatResponse struct {
 	UserInput string `json:"user_input"`
 	Response  string `json:"response"`
 	Identity  string `json:"identity"`
+	Color     string `json:"color"`
 }
 
 type groqResponse struct {
@@ -114,6 +116,7 @@ func chatbotHandler(w http.ResponseWriter, r *http.Request) {
 		UserInput: chatReq.Message,
 		Response:  reply.Content,
 		Identity:  CHATBOT_NAME,
+		Color:     BOT_COLOR,
 	})
 }
 
@@ -134,7 +137,7 @@ func apiChatHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func healthHandler(w http.ResponseWriter, r *http.Request) {
-	writeJSON(w, http.StatusOK, map[string]any{"status": "healthy", "bot": CHATBOT_NAME, "identity_aware": true})
+	writeJSON(w, http.StatusOK, map[string]any{"status": "healthy", "bot": CHATBOT_NAME, "color": BOT_COLOR, "identity_aware": true})
 }
 
 func identityHandler(w http.ResponseWriter, r *http.Request) {
@@ -142,6 +145,7 @@ func identityHandler(w http.ResponseWriter, r *http.Request) {
 		"name":           CHATBOT_NAME,
 		"system_prompt":  SYSTEM_PROMPT,
 		"version":        CHATBOT_VERSION,
+		"color":          BOT_COLOR,
 		"knows_identity": true,
 	})
 }
