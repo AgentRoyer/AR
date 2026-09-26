@@ -1,0 +1,25 @@
+{
+  // Fichiers/dossiers masqués dans l'explorateur VS Code.
+  // true = masqué, false (ou supprimer la ligne) = visible.
+  "files.exclude": {
+    "**/.git": true,
+    "**/__pycache__": true,
+    "**/target": true,
+    ".env": true,
+    ".env.example": true,
+    ".gitignore": true,
+    "docker-compose.yml": true,
+    "nginx.conf": true,
+    ".certs": true,
+    ".github": true,
+    ".devcontainer.json": true,
+    "CLAUDE.md": true,
+    ".speckit": false,
+    "speckit_md": false
+  },
+
+  // Exclus aussi de la recherche (Ctrl+Shift+F), en plus de files.exclude.
+  "search.exclude": {
+    "**/target": true
+  }
+}
