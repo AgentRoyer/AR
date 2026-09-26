@@ -6,42 +6,32 @@
     "001-all-arsetup": {
       "status": "SUCCESS",
       "timestamp": "2024-09-26T10:00:00Z",
-      "steps_total": 47,
-      "steps_completed": 47,
-      "errors": null
+      "note": "Completed before SpecKit tracking"
     },
     "002-all-arsetup2": {
       "status": "SUCCESS",
       "timestamp": "2024-09-26T10:30:00Z",
-      "steps_total": 47,
-      "steps_completed": 47,
-      "errors": null
+      "note": "Completed before SpecKit tracking"
     },
     "003-all-duplicate_other_stacks": {
       "status": "SUCCESS",
       "timestamp": "2024-09-26T11:00:00Z",
-      "steps_total": 36,
-      "steps_completed": 36,
-      "errors": null
+      "note": "Completed before SpecKit tracking"
     },
     "004-all-chatbots-know-her-name": {
       "status": "SUCCESS",
       "timestamp": "2024-09-26T11:30:00Z",
-      "steps_total": 32,
-      "steps_completed": 32,
-      "errors": null
+      "note": "Completed before SpecKit tracking"
     },
     "005-all-add-cfml-chatbot-and-change-colors": {
       "status": "SUCCESS",
       "timestamp": "2024-09-26T12:00:00Z",
-      "steps_total": 38,
-      "steps_completed": 38,
-      "errors": null
+      "note": "Completed before SpecKit tracking"
     },
-    "000-all-init-speckit": {
+    "006-all-init-speckit": {
       "status": "SUCCESS",
-      "timestamp": "2024-09-26T12:30:00Z",
-      "steps_completed": 6,
+      "timestamp": "2024-09-26T15:45:23Z",
+      "steps_completed": 15,
       "errors": null
     }
   }
