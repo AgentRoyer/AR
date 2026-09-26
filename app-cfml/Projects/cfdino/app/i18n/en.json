@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "title": "CFdino - Full Stack CFML",
+    "description": "CFdino delivers expert ColdFusion and CFML development, legacy modernization, API integration, and scalable web solutions for businesses in France and the UK."
+  },
+  "language": {
+    "switcher_label": "Choose language",
+    "english": "EN",
+    "french": "FR"
+  },
+  "nav": {
+    "services": "Services",
+    "expertise": "Expertise",
+    "lab": "Lab",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Full Stack CFML",
+    "subtitle": "Delivering robust, scalable CFML solutions on ACF or Lucee with 25 years of experience. Available for freelance projects and long-term contracts.",
+    "contact": "Get in Touch",
+    "expertise": "View Expertise",
+    "work": "View Work",
+    "years": "25 Years",
+    "experience": "CFML Experience",
+    "markets": "France & UK Markets",
+    "remote": "Remote-Ready",
+    "delivery": "Fast Delivery",
+    "quality": "Quality Guaranteed"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Comprehensive ColdFusion development solutions",
+    "custom_title": "Custom Development",
+    "custom_description": "Build powerful web applications: CMS, CRM, Intranet, Extranet.",
+    "legacy_title": "Legacy Modernization",
+    "legacy_description": "Upgrade and optimize existing ColdFusion applications to modern standards and best practices.",
+    "api_title": "API Integration",
+    "api_description": "Connect your ColdFusion applications with third-party services and modern REST APIs.",
+    "performance_title": "Performance Optimization",
+    "performance_description": "Analyze and improve application performance, code, and database queries.",
+    "i18n_title": "Multilingual Internationalization",
+    "i18n_description": "Build websites that serve multiple languages seamlessly with centralized translations, language switching, routing, and SEO optimization.",
+    "consulting_title": "Technical Consulting",
+    "consulting_description": "Assess your infrastructure, plan migrations, and receive strategic guidance for your ColdFusion environment and modernization path.",
+    "audit_title": "Code Review & Security Audit",
+    "audit_description": "Analyze code quality, identify vulnerabilities, and strengthen security with industry best practices.",
+    "support_title": "Support & Maintenance",
+    "support_description": "Get ongoing support, bug fixes, updates, and optimization to keep your ColdFusion applications running smoothly and securely."
+  },
+  "expertise": {
+    "title": "Expertise",
+    "subtitle": "Modern ColdFusion stack and ecosystem",
+    "core": "Core Technologies",
+    "databases": "Databases",
+    "devops": "DevOps & Tooling",
+    "frontend_title": "Modern Front-End Integration",
+    "frontend_description": "Modern JavaScript tools and responsive design"
+  },
+  "lab": {
+    "title": "Dino Lab Projects",
+    "dino_title": "Dino Detective",
+    "dino_description": "Upload a photo of a dinosaur, fossil, bone, toy, or footprint, and let the AI agent analyze it immediately to reveal its species, geological era, and fascinating secrets.",
+    "test_project": "Test project",
+    "open_project": "Open Dino Detective",
+    "visual_alt": "Dino Detective visual"
+  },
+  "about": {
+    "title": "About CFdino",
+    "intro_1": "Hi, I'm JC Royer!",
+    "intro_2": "With over 25 years of specialized experience in ColdFusion development, I help businesses in France and the UK modernize and build robust web applications.",
+    "intro_3": "I understand that ColdFusion remains a critical technology for many enterprises, powering mission-critical applications that require expert maintenance and enhancement. Whether you need to modernize legacy code, integrate new features, or build from scratch, I bring deep technical expertise and a commitment to quality.",
+    "why_title": "Why Work With Me?",
+    "point_1": "Proven track record with enterprise-level ColdFusion projects",
+    "point_2": "Flexible engagement models: project-based or long-term contracts",
+    "point_3": "Strong communication and remote collaboration experience",
+    "point_4": "Up-to-date with modern development practices and tools"
+  },
+  "contact": {
+    "title": "Let's Work Together",
+    "subtitle": "Ready to discuss your project?",
+    "email": "Email",
+    "email_placeholder": "you@example.com",
+    "message": "Message",
+    "message_placeholder": "Tell me about your project...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Thank you, your message has been sent. I'll get back to you within 24 hours.",
+    "error": "Something went wrong. Please try again later.",
+    "email_error": "Please fill a valid email address.",
+    "message_error": "Please tell me more about your project."
+  },
+  "footer": {
+    "tagline": "Expert ColdFusion Freelance Developer",
+    "copyright": "All rights reserved"
+  }
+}

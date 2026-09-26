@@ -5,7 +5,7 @@
     "**/.git": true,
     "**/__pycache__": true,
     "**/target": true,
-    ".env": true,
+    ".env": false,
     ".env.example": true,
     ".gitignore": true,
     "docker-compose.yml": true,
@@ -14,6 +14,7 @@
     ".github": true,
     ".devcontainer.json": true,
     "CLAUDE.md": true,
+    "scripts": true,
     ".speckit": false,
     "speckit_md": false
   },

@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "title": "Dino Detective | CFdino Lab"
+  },
+  "language": {
+    "switcher_label": "Choisir la langue",
+    "english": "EN",
+    "french": "FR"
+  },
+  "header": {
+    "lab": "CFdino Lab",
+    "dino_detective": "Dino Detective",
+    "back_to_site": "Retour à CFdino"
+  },
+  "page": {
+    "title": "Dino Detective",
+    "intro": "Envoyez la photo d'un dinosaure, d'un fossile, d'un os, d'un jouet ou d'une empreinte, et laissez l'agent IA l'analyser immédiatement pour révéler son espèce, son époque géologique ainsi que tous ses secrets fascinants.",
+    "identify": "Identifier",
+    "choose_file": "Choisir un fichier",
+    "no_file_chosen": "Aucun fichier choisi",
+    "examining": "L'agent examine l'image...",
+    "chat_title": "Poser une question à l'agent",
+    "context": "Contexte",
+    "awaiting": "en attente",
+    "ask_anything": "Posez votre question !",
+    "ask_this": "Posez une question sur ce spécimen",
+    "ask_about": "Posez une question sur {species}",
+    "send": "Envoyer",
+    "thinking": "L'agent réfléchit...",
+    "uploaded_image": "Image envoyée",
+    "high_confidence": "Confiance élevée",
+    "medium_confidence": "Confiance moyenne",
+    "low_confidence": "Confiance faible",
+    "period": "Période",
+    "diet": "Régime alimentaire",
+    "estimated_size": "Taille estimée",
+    "fun_fact_prefix": "Le saviez-vous ?",
+    "ask_below": "Posez une question ci-dessous pour en apprendre davantage sur ce dinosaure.",
+    "no_image": "Aucune image n'a été reçue. Veuillez réessayer.",
+    "unexpected_error": "Un problème est survenu. Veuillez réessayer.",
+    "agent_error": "L'agent a rencontré un problème. Veuillez réessayer."
+  }
+}

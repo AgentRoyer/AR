@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "title": "CFdino - Full Stack CFML",
+    "description": "CFdino propose du développement ColdFusion et CFML, de la modernisation d'applications existantes, de l'intégration d'API et des solutions web évolutives pour les entreprises en France et au Royaume-Uni."
+  },
+  "language": {
+    "switcher_label": "Choisir la langue",
+    "english": "EN",
+    "french": "FR"
+  },
+  "nav": {
+    "services": "Services",
+    "expertise": "Expertise",
+    "lab": "Lab",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Full Stack CFML",
+    "subtitle": "Des solutions CFML robustes et évolutives sur ACF ou Lucee, avec 25 ans d'expérience. Disponible pour des missions freelance et des collaborations de long terme.",
+    "contact": "Me contacter",
+    "expertise": "Voir l'expertise",
+    "work": "Voir les réalisations",
+    "years": "25 ans",
+    "experience": "d'expérience CFML",
+    "markets": "Marchés France & Royaume-Uni",
+    "remote": "Prêt pour le travail à distance",
+    "delivery": "Livraison rapide",
+    "quality": "Qualité garantie"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Des solutions complètes de développement ColdFusion",
+    "custom_title": "Développement sur mesure",
+    "custom_description": "Créez des applications web puissantes : CMS, CRM, intranet et extranet.",
+    "legacy_title": "Modernisation des applications existantes",
+    "legacy_description": "Mettez à niveau et optimisez vos applications ColdFusion existantes selon les standards actuels.",
+    "api_title": "Intégration d'API",
+    "api_description": "Connectez vos applications ColdFusion à des services tiers et à des API REST modernes.",
+    "performance_title": "Optimisation des performances",
+    "performance_description": "Analysez et améliorez les performances de l'application, du code et des requêtes de base de données.",
+    "i18n_title": "Internationalisation multilingue",
+    "i18n_description": "Créez des sites web multilingues grâce à des traductions centralisées, un changement de langue persistant, un routage adapté et une optimisation SEO.",
+    "consulting_title": "Conseil technique",
+    "consulting_description": "Évaluez votre infrastructure, planifiez les migrations et obtenez des conseils stratégiques pour votre environnement ColdFusion et sa modernisation.",
+    "audit_title": "Audit code et sécurité",
+    "audit_description": "Analysez la qualité du code, identifiez les vulnérabilités et renforcez la sécurité avec les meilleures pratiques du secteur.",
+    "support_title": "Support et maintenance",
+    "support_description": "Bénéficiez d'un support continu, de corrections, de mises à jour et d'optimisations pour des applications ColdFusion fiables et sécurisées."
+  },
+  "expertise": {
+    "title": "Expertise",
+    "subtitle": "L'écosystème ColdFusion moderne",
+    "core": "Technologies fondamentales",
+    "databases": "Bases de données",
+    "devops": "DevOps et outillage",
+    "frontend_title": "Intégration front-end moderne",
+    "frontend_description": "Des outils JavaScript modernes et un design responsive"
+  },
+  "lab": {
+    "title": "Projets Dino Lab",
+    "dino_title": "Dino Detective",
+    "dino_description": "Envoyez la photo d'un dinosaure, d'un fossile, d'un os, d'un jouet ou d'une empreinte, et laissez l'agent IA l'analyser immédiatement pour révéler son espèce, son époque géologique ainsi que tous ses secrets fascinants.",
+    "test_project": "Tester le projet",
+    "open_project": "Ouvrir Dino Detective",
+    "visual_alt": "Aperçu de Dino Detective"
+  },
+  "about": {
+    "title": "À propos de CFdino",
+    "intro_1": "Bonjour, je suis JC Royer !",
+    "intro_2": "Avec plus de 25 ans d'expérience spécialisée dans le développement ColdFusion, j'aide les entreprises en France et au Royaume-Uni à moderniser et à créer des applications web robustes.",
+    "intro_3": "ColdFusion reste une technologie critique pour de nombreuses entreprises et alimente des applications essentielles qui demandent une maintenance et des évolutions expertes. Que vous souhaitiez moderniser un code existant, intégrer de nouvelles fonctionnalités ou créer une application, j'apporte une forte expertise technique et un engagement pour la qualité.",
+    "why_title": "Pourquoi travailler avec moi ?",
+    "point_1": "Une expérience reconnue sur des projets ColdFusion de niveau entreprise",
+    "point_2": "Des modes de collaboration flexibles : au projet ou sur le long terme",
+    "point_3": "Une communication solide et une expérience éprouvée de la collaboration à distance",
+    "point_4": "Des pratiques et outils de développement modernes"
+  },
+  "contact": {
+    "title": "Travaillons ensemble",
+    "subtitle": "Prêt à parler de votre projet ?",
+    "email": "Email",
+    "email_placeholder": "vous@exemple.com",
+    "message": "Message",
+    "message_placeholder": "Parlez-moi de votre projet...",
+    "send": "Envoyer le message",
+    "sending": "Envoi en cours...",
+    "success": "Merci, votre message a bien été envoyé. Je vous répondrai sous 24 heures.",
+    "error": "Un problème est survenu. Veuillez réessayer plus tard.",
+    "email_error": "Veuillez saisir une adresse e-mail valide.",
+    "message_error": "Veuillez donner davantage de détails sur votre projet."
+  },
+  "footer": {
+    "tagline": "Développeur freelance expert ColdFusion",
+    "copyright": "Tous droits réservés"
+  }
+}

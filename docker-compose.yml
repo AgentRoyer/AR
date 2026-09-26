@@ -4,10 +4,9 @@ services:
   app-cfml:
     build: ./app-cfml
     container_name: app-cfml
+    env_file: .env  # .env unique à la racine du codespace
     ports:
       - "8001:8888"
-    environment:
-      LUCEE_ADMIN_PASSWORD: ${LUCEE_ADMIN_PASSWORD:-password}
     volumes:
       - ./app-cfml/Projects:/var/www
     networks:
@@ -17,11 +16,10 @@ services:
   app-rust:
     build: ./app-rust
     container_name: app-rust
+    env_file: .env  # .env unique à la racine du codespace
     ports:
       - "8002:8000"
     environment:
-      GROQ_API_KEY: ${GROQ_API_KEY}
-      CLAUDE_API_KEY: ${CLAUDE_API_KEY}
       RUST_LOG: info
     volumes:
       - ./app-rust/Projects:/app/projects
@@ -32,6 +30,7 @@ services:
   app-go:
     build: ./app-go
     container_name: app-go
+    env_file: .env  # .env unique à la racine du codespace
     ports:
       - "8003:8080"
     environment:
@@ -45,6 +44,7 @@ services:
   app-python:
     build: ./app-python
     container_name: app-python
+    env_file: .env  # .env unique à la racine du codespace
     ports:
       - "8004:5000"
     environment:

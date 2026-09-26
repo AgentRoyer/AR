@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "title": "Dino Detective | CFdino Lab"
+  },
+  "language": {
+    "switcher_label": "Choose language",
+    "english": "EN",
+    "french": "FR"
+  },
+  "header": {
+    "lab": "CFdino Lab",
+    "dino_detective": "Dino Detective",
+    "back_to_site": "Back to CFdino"
+  },
+  "page": {
+    "title": "Dino Detective",
+    "intro": "Upload a photo of a dinosaur, fossil, bone, toy, or footprint, and let the AI agent analyze it immediately to reveal its species, geological era, and fascinating secrets.",
+    "identify": "Identify",
+    "choose_file": "Choose File",
+    "no_file_chosen": "No file chosen",
+    "examining": "The agent is examining the image...",
+    "chat_title": "Ask the agent a question",
+    "context": "Context",
+    "awaiting": "awaiting",
+    "ask_anything": "Ask anything!",
+    "ask_this": "Ask anything about this",
+    "ask_about": "Ask anything about {species}",
+    "send": "Send",
+    "thinking": "The agent is thinking...",
+    "uploaded_image": "Uploaded image",
+    "high_confidence": "High confidence",
+    "medium_confidence": "Medium confidence",
+    "low_confidence": "Low confidence",
+    "period": "Period",
+    "diet": "Diet",
+    "estimated_size": "Estimated size",
+    "fun_fact_prefix": "Fun fact",
+    "ask_below": "Ask a question below to learn more about this dinosaur.",
+    "no_image": "No image was received. Please try again.",
+    "unexpected_error": "Something went wrong. Please try again.",
+    "agent_error": "The agent encountered an error. Please try again."
+  }
+}
