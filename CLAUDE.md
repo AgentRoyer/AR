@@ -3,6 +3,7 @@
 Multi-language stack behind an nginx HTTPS reverse proxy, run with Docker Compose inside a GitHub Codespace (Docker-in-Docker).
 
 - `ARsetup.md` — the full install recipe. There is no `run_task.py`; steps are executed by hand.
+- `ARsetup2.md` — restructure into `app-<stack>/Projects/<project>/` (cfdino, chatbot, microservice-1, api-data). Each Dockerfile builds from `Projects/`; add a project = add a folder (and adjust that stack's Dockerfile build/run target).
 - Services (`docker-compose.yml`): `app-cfml` (Lucee 7, :8001), `app-rust` (:8002), `app-go` (:8003), `app-python` (Flask, :8004), `nginx` (:443/:80).
 - URLs: `https://localhost` (landing page), `https://{cfml,rust,go,python}.localhost`.
 - `.env` and `.certs/` (self-signed) are gitignored — never commit them.

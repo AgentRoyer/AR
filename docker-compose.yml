@@ -9,7 +9,7 @@ services:
     environment:
       LUCEE_ADMIN_PASSWORD: ${LUCEE_ADMIN_PASSWORD:-password}
     volumes:
-      - ./app-cfml/src:/var/www
+      - ./app-cfml/Projects:/var/www
     networks:
       - agentroyer-net
     restart: unless-stopped
@@ -24,7 +24,7 @@ services:
       CLAUDE_API_KEY: ${CLAUDE_API_KEY}
       RUST_LOG: info
     volumes:
-      - ./app-rust/src:/app/src
+      - ./app-rust/Projects:/app/projects
     networks:
       - agentroyer-net
     restart: unless-stopped
@@ -36,6 +36,8 @@ services:
       - "8003:8080"
     environment:
       PORT: 8080
+    volumes:
+      - ./app-go/Projects:/app/projects
     networks:
       - agentroyer-net
     restart: unless-stopped
@@ -49,7 +51,7 @@ services:
       FLASK_APP: app.py
       FLASK_ENV: development
     volumes:
-      - ./app-python:/app
+      - ./app-python/Projects:/app/projects
     networks:
       - agentroyer-net
     restart: unless-stopped
