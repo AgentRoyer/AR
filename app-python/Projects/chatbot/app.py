@@ -10,6 +10,7 @@ app = Flask(__name__)
 # Chatbot PYTHONA — même interface et même API que RUSTINA (app-rust/Projects/chatbot)
 CHATBOT_NAME = "PYTHONA"
 CHATBOT_VERSION = "1.0.0"
+SYSTEM_PROMPT = "You are PYTHONA, a helpful AI chatbot powered by Groq under Python. You know your name and identity. When asked who you are or what your name is, answer clearly and confidently."
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_MODEL = "openai/gpt-oss-20b"
 TEMPLATE = (Path(__file__).parent / "templates" / "index.html").read_text(encoding="utf-8")
@@ -24,7 +25,8 @@ def groq_complete(messages):
         response = requests.post(
             GROQ_URL,
             headers={"Authorization": f"Bearer {api_key}"},
-            json={"model": GROQ_MODEL, "messages": messages, "temperature": 0.7},
+            # Identité : le prompt système précède toujours la conversation
+            json={"model": GROQ_MODEL, "messages": [{"role": "system", "content": SYSTEM_PROMPT}] + messages, "temperature": 0.7},
             timeout=60,
         )
     except requests.RequestException as error:
@@ -61,7 +63,8 @@ def chatbot():
         return jsonify({
             "bot": CHATBOT_NAME,
             "user_input": user_message,
-            "response": reply["content"]
+            "response": reply["content"],
+            "identity": CHATBOT_NAME
         })
 
     return render_index()
@@ -82,7 +85,18 @@ def api_chat():
 def health():
     return jsonify({
         "status": "healthy",
-        "bot": CHATBOT_NAME
+        "bot": CHATBOT_NAME,
+        "identity_aware": True
+    }), 200
+
+
+@app.route('/identity', methods=['GET'])
+def identity():
+    return jsonify({
+        "name": CHATBOT_NAME,
+        "system_prompt": SYSTEM_PROMPT,
+        "version": CHATBOT_VERSION,
+        "knows_identity": True
     }), 200
 
 

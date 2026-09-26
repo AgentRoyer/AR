@@ -21,6 +21,7 @@ const (
 	CHATBOT_VERSION = "1.0.0"
 	GROQ_URL        = "https://api.groq.com/openai/v1/chat/completions"
 	GROQ_MODEL      = "openai/gpt-oss-20b"
+	SYSTEM_PROMPT   = "You are GONA, a helpful AI chatbot powered by Groq under Go. You know your name and identity. When asked who you are or what your name is, answer clearly and confidently."
 )
 
 //go:embed templates/index.html
@@ -39,6 +40,7 @@ type ChatResponse struct {
 	Bot       string `json:"bot"`
 	UserInput string `json:"user_input"`
 	Response  string `json:"response"`
+	Identity  string `json:"identity"`
 }
 
 type groqResponse struct {
@@ -55,7 +57,9 @@ func groqComplete(messages []ChatMessage) (ChatMessage, error) {
 	if apiKey == "" {
 		return ChatMessage{}, errors.New("GROQ_API_KEY_CFC est manquante sur le serveur.")
 	}
-	payload, _ := json.Marshal(map[string]any{"model": GROQ_MODEL, "messages": messages, "temperature": 0.7})
+	// Identité : le prompt système précède toujours la conversation
+	withSystem := append([]ChatMessage{{Role: "system", Content: SYSTEM_PROMPT}}, messages...)
+	payload, _ := json.Marshal(map[string]any{"model": GROQ_MODEL, "messages": withSystem, "temperature": 0.7})
 	req, _ := http.NewRequest(http.MethodPost, GROQ_URL, bytes.NewReader(payload))
 	req.Header.Set("Authorization", "Bearer "+apiKey)
 	req.Header.Set("Content-Type", "application/json")
@@ -109,6 +113,7 @@ func chatbotHandler(w http.ResponseWriter, r *http.Request) {
 		Bot:       CHATBOT_NAME,
 		UserInput: chatReq.Message,
 		Response:  reply.Content,
+		Identity:  CHATBOT_NAME,
 	})
 }
 
@@ -129,7 +134,16 @@ func apiChatHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func healthHandler(w http.ResponseWriter, r *http.Request) {
-	writeJSON(w, http.StatusOK, map[string]string{"status": "healthy", "bot": CHATBOT_NAME})
+	writeJSON(w, http.StatusOK, map[string]any{"status": "healthy", "bot": CHATBOT_NAME, "identity_aware": true})
+}
+
+func identityHandler(w http.ResponseWriter, r *http.Request) {
+	writeJSON(w, http.StatusOK, map[string]any{
+		"name":           CHATBOT_NAME,
+		"system_prompt":  SYSTEM_PROMPT,
+		"version":        CHATBOT_VERSION,
+		"knows_identity": true,
+	})
 }
 
 func main() {
@@ -140,7 +154,9 @@ func main() {
 	router.HandleFunc("/chatbot/", indexHandler).Methods("GET")
 	router.HandleFunc("/api/chat", apiChatHandler).Methods("POST")
 	router.HandleFunc("/health", healthHandler).Methods("GET")
+	router.HandleFunc("/identity", identityHandler).Methods("GET")
 
 	fmt.Printf("🔵 %s starting on port 8080...\n", CHATBOT_NAME)
+	fmt.Printf("   System Prompt: %s\n", SYSTEM_PROMPT)
 	log.Fatal(http.ListenAndServe(":8080", router))
 }

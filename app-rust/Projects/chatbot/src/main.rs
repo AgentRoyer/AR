@@ -62,9 +62,12 @@ struct BotResponse {
     bot: &'static str,
     user_input: String,
     response: String,
+    identity: &'static str,
 }
 
 const CHATBOT_NAME: &str = "RUSTINA";
+const CHATBOT_VERSION: &str = "1.0.0";
+const SYSTEM_PROMPT: &str = "You are RUSTINA, a helpful AI chatbot powered by Groq under Rust. You know your name and identity. When asked who you are or what your name is, answer clearly and confidently.";
 
 fn format_datetime(dt: chrono::NaiveDateTime) -> String {
     dt.format("%d/%m/%Y %H:%M").to_string()
@@ -137,11 +140,15 @@ fn bot_response(request: &BotRequest) -> Result<String, String> {
         bot: CHATBOT_NAME,
         user_input: request.message.clone(),
         response: reply.content,
+        identity: CHATBOT_NAME,
     })
     .unwrap())
 }
 
 fn groq_complete(messages: &[ChatMessage]) -> Result<ChatMessage, String> {
+    // Identité : le prompt système précède toujours la conversation
+    let mut messages_with_system = vec![ChatMessage { role: "system".to_string(), content: SYSTEM_PROMPT.to_string() }];
+    messages_with_system.extend_from_slice(messages);
     // Clé fournie par le .env de la racine du codespace (docker-compose env_file)
     let api_key = std::env::var("GROQ_API_KEY_CFC")
         .ok()
@@ -150,7 +157,7 @@ fn groq_complete(messages: &[ChatMessage]) -> Result<ChatMessage, String> {
     let response = reqwest::blocking::Client::new()
         .post("https://api.groq.com/openai/v1/chat/completions")
         .bearer_auth(api_key)
-        .json(&serde_json::json!({ "model": "openai/gpt-oss-20b", "messages": messages, "temperature": 0.7 }))
+        .json(&serde_json::json!({ "model": "openai/gpt-oss-20b", "messages": messages_with_system, "temperature": 0.7 }))
         .send()
         .map_err(|error| format!("Impossible de joindre Groq : {error}"))?;
     if !response.status().is_success() {
@@ -191,6 +198,18 @@ fn main() {
                 "200 OK",
                 "text/html; charset=utf-8",
                 render_index(&timestamp),
+            )
+        } else if path == "/identity" {
+            (
+                "200 OK",
+                "application/json",
+                serde_json::json!({
+                    "name": CHATBOT_NAME,
+                    "system_prompt": SYSTEM_PROMPT,
+                    "version": CHATBOT_VERSION,
+                    "knows_identity": true
+                })
+                .to_string(),
             )
         } else if path == "/health" {
             ("200 OK", "text/plain; charset=utf-8", "OK".to_string())
